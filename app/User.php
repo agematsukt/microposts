@@ -135,6 +135,7 @@ class User extends Authenticatable
         $this->loadCount(['microposts', 'followings', 'followers']);
     }
 
+
     /**
      * このユーザとフォロー中ユーザの投稿に絞り込む。
      */
