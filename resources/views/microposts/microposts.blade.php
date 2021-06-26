@@ -20,6 +20,12 @@
                             {!! Form::open(['route' => ['microposts.destroy', $micropost->id], 'method' => 'delete']) !!}
                                 {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-sm']) !!}
                             {!! Form::close() !!}
+                            {!! Form::open(['route' => ['favorites.favorite', $micropost->id], 'method' => 'post']) !!}
+                                {!! Form::submit('favorites favorite', ['class' => 'btn btn-danger btn-sm']) !!}
+                            {!! Form::close() !!}
+                            {!! Form::open(['route' => ['favorites.unfavorite', $micropost->id], 'method' => 'delete']) !!}
+                                {!! Form::submit('favorites delete', ['class' => 'btn btn-danger btn-sm']) !!}
+                            {!! Form::close() !!}
                         @endif
                     </div>
                 </div>
