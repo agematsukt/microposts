@@ -100,12 +100,12 @@ class UsersController extends Controller
         $user->loadRelationshipCounts();
 
         // ユーザのフォロワー一覧を取得
-        $favorites = $user->favorites()->paginate(10);
+        $microposts = $user->microposts()->orderBy('created_at', 'desc')->paginate(10);
 
         // フォロワー一覧ビューでそれらを表示
         return view('users.favorites', [
             'user' => $user,
-            'users' => $favorites,
+            'microposts' => $microposts,
         ]);
     }
 
